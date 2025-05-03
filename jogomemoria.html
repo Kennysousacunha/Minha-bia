@@ -255,6 +255,27 @@
 <a href="index.html">
 	 <button style="padding: 10px 20px; font-size: 16px;">Voltar para você</button>
 </a>
+<!-- Elemento de áudio -->
+<audio id="musicaFundo" loop preload="auto">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<!-- Botão para iniciar a música -->
+<button id="botaoMusica">Iniciar Música</button>
+
+<script>
+  const botao = document.getElementById('botaoMusica');
+  const musica = document.getElementById('musicaFundo');
+
+  botao.addEventListener('click', () => {
+    musica.play().then(() => {
+      console.log('Música reproduzida com sucesso.');
+    }).catch((erro) => {
+      console.error('Erro ao reproduzir a música:', erro);
+    });
+  });
+</script>
 
 
 </body>
